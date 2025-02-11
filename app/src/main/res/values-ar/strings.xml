@@ -30,5 +30,7 @@
     <string name="shops">Shops</string>
     <string name="qibla_direction">Qibla Direction</string>
     <string name="prayer_time">Prayer Time</string>
+    <string name="Videos">Videos</string>
+    <string name="Offers">Offers</string>
 
 </resources>
