@@ -29,6 +29,10 @@
     <string name="password_placeholder">Password</string>
     <string name="terms_and_conditions">I Would like to receive your newsletter and other promotional information.</string>
     <string name="username">Username,</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="shops">Shops</string>
+    <string name="qibla_direction">Qibla Direction</string>
+    <string name="prayer_time">Prayer Time</string>
 
 
 </resources>

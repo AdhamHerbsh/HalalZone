@@ -1,43 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/secondary"
+    android:orientation="vertical"
     android:paddingTop="50dp"
     tools:context=".HomeActivity">
-
 
     <LinearLayout
         android:id="@+id/_HEADER"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="10"
+        android:padding="10dp">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/_PORFILE_IMG"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:contentDescription="Profile Image"
+            tools:srcCompat="@drawable/profile_image_removebg" />
 
         <TextView
             android:id="@+id/_USER"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_weight="1"
             android:fontFamily="@font/poppins_bold"
             android:text="@string/username"
             android:textColor="#FFFFFF" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
+            android:id="@+id/_NOTIFY_BTN"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="Notification"
+            android:scaleType="fitEnd"
             app:srcCompat="@android:drawable/ic_popup_reminder" />
 
     </LinearLayout>
@@ -46,11 +52,10 @@
         android:id="@+id/_SEARCHBAR"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/_HEADER"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-
+        android:layout_weight="1"
         android:background="@drawable/white_card_bg"
         android:orientation="horizontal">
 
@@ -59,6 +64,7 @@
             android:layout_width="47dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:padding="10dp"
             app:srcCompat="@android:drawable/ic_menu_search" />
 
         <EditText
@@ -76,50 +82,54 @@
     <LinearLayout
         android:id="@+id/_BODY"
         android:layout_width="match_parent"
-        android:layout_height="578dp"
-        android:layout_below="@id/_SEARCHBAR"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/white_half_card_bg"
+        android:layout_weight="200"
         android:orientation="vertical">
 
+        <FrameLayout
+            android:id="@+id/_USER_FRAME"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/_NAV"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/_TAB_LAYOUT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/_BODY"
         android:background="@color/secondary"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:pointerIcon="arrow"
+        app:tabIconTint="@color/white"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/primary">
 
-        <ImageView
-            android:id="@+id/imageView7"
+        <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/baseline_home_24" />
-
-        <ImageView
-            android:id="@+id/imageView5"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_home_24"
+            />
+        <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_qr_code_scanner_24"
 
-        <ImageView
-            android:id="@+id/imageView8"
+            />
+        <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/baseline_shopping_cart_24" />
-
-        <ImageView
-            android:id="@+id/imageView9"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_shopping_cart_24"
+            />
+        <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/baseline_menu_24" />
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_menu_24"
+            />
 
-    </LinearLayout>
-</RelativeLayout>
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+</LinearLayout>

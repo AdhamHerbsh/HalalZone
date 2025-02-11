@@ -26,5 +26,9 @@
     <string name="password_placeholder">كلمة المرور</string>
     <string name="terms_and_conditions">أرغب في تلقي رسالتك الإخبارية والمعلومات الترويجية الأخرى.</string>
     <string name="username">اسم المستخدم</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="shops">Shops</string>
+    <string name="qibla_direction">Qibla Direction</string>
+    <string name="prayer_time">Prayer Time</string>
 
 </resources>
