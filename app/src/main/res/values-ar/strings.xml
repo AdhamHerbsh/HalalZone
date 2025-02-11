@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">منطقة حلال</string>
+    <string name="open_nav">القائمة مفتوحة</string>
+    <string name="close_nav">القائمة مغلقة</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">الجزء الأول</string>
+    <string name="second_fragment_label">الجزء الثاني</string>
+    <string name="next">التالي</string>
+    <string name="previous">سابق</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">مرحبا جزء فارغ</string>
+    <string name="welcome">مرحبا بك في</string>
+    <string name="cna">أنشاء حساب جديد</string>
+    <string name="login">تسجيل دخول</string>
+    <string name="sign_in_to_continue">Sign In To Continue</string>
+    <string name="sign_up">ان شاء حساب</string>
+    <string name="sign_in">تسجيل</string>
+    <string name="forgot_password">نسيت كلمه المرور</string>
+
+    <string name="name_placeholder">الاسم</string>
+    <string name="phone_placeholder">الهاتف</string>
+    <string name="email_placeholder">البريد الاليكتروني</string>
+    <string name="password_placeholder">كلمة المرور</string>
+    <string name="terms_and_conditions">أرغب في تلقي رسالتك الإخبارية والمعلومات الترويجية الأخرى.</string>
+    <string name="username">اسم المستخدم</string>
+
+</resources>

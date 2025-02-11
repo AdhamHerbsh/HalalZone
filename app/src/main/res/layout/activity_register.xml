@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="150dp"
+    tools:context=".LoginActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="@string/cna"
+            android:textColor="@color/primary"
+            android:textSize="34sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutTop"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/_NAME_INPUT"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/input_bg"
+            android:backgroundTint="@color/secondary"
+            android:ems="20"
+            android:hint="@string/name_placeholder"
+            android:importantForAutofill="yes"
+            android:inputType="textEmailAddress"
+            android:outlineSpotShadowColor="@color/black"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <EditText
+            android:id="@+id/_PHONE_INPUT"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_bg"
+            android:backgroundTint="@color/secondary"
+            android:ems="20"
+            android:hint="@string/phone_placeholder"
+            android:importantForAutofill="yes"
+            android:inputType="textEmailAddress"
+            android:outlineSpotShadowColor="@color/black"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+
+        <EditText
+            android:id="@+id/_EMAIL_INPUT"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_bg"
+            android:backgroundTint="@color/secondary"
+            android:ems="20"
+            android:hint="@string/email_placeholder"
+            android:importantForAutofill="yes"
+            android:inputType="textEmailAddress"
+            android:outlineSpotShadowColor="@color/black"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <EditText
+            android:id="@+id/_PASSWORD_INPUT"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_bg"
+            android:backgroundTint="@color/secondary"
+            android:ems="20"
+            android:hint="@string/password_placeholder"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayoutMid"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/_RADIO_BTN"
+            style="@android:style/Widget.CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:buttonTint="@color/secondary"
+            android:fontFamily="@font/poppins"
+            android:text="@string/terms_and_conditions"
+            android:textColorLink="@color/secondary" />
+
+        <Button
+            android:id="@+id/CNA_SIGNUP_BTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/primary"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/sign_up" />
+
+        <Button
+            android:id="@+id/CNA_LOGIN_BTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/login"
+            android:textColor="@color/primary" />
+
+    </LinearLayout>
+
+</RelativeLayout>
