@@ -21,6 +21,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText _EMAIL_INPUT;
     EditText _PASSWORD_INPUT;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,5 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
         CNA_SIGNUP_BTN.setOnClickListener(v -> {
             Toast.makeText(this, "This Process Not Available At The Moment", Toast.LENGTH_SHORT).show();
         });
+
+
+
     }
 }

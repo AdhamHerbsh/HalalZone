@@ -11,39 +11,38 @@
     tools:context=".HomeActivity">
 
     <LinearLayout
-        android:id="@+id/_HEADER"
+        android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="10"
+        android:gravity="center_vertical"
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/_PORFILE_IMG"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="Profile Image"
-            tools:srcCompat="@drawable/profile_image_removebg" />
+            android:id="@+id/profileImageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="profile image description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_image_removebg" />
 
         <TextView
-            android:id="@+id/_USER"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/username"
-            android:textColor="#FFFFFF" />
-
-        <ImageView
-            android:id="@+id/_NOTIFY_BTN"
-            android:layout_width="match_parent"
+            android:id="@+id/userTextView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="Notification"
-            android:scaleType="fitEnd"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/username"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/notificationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="notification button description"
+            android:padding="5dp"
             app:srcCompat="@android:drawable/ic_popup_reminder" />
 
     </LinearLayout>

@@ -32,5 +32,15 @@
     <string name="prayer_time">Prayer Time</string>
     <string name="Videos">Videos</string>
     <string name="Offers">Offers</string>
+    <string name="post_offer">Post Offer</string>
+    <string name="review_complaint">Review A Complaint</string>
+    <string name="selling">Selling</string>
+    <string name="manage_business_profile">Manage Business Profile</string>
+    <string name="business_profile">Business Profile</string>
+    <string name="manage_business">Manage Business</string>
+    <string name="manage_requests">Manage Requests</string>
+    <string name="treat_complaint">Treat A Complaint</string>
+    <string name="manage_users">Manage Users</string>
+    <string name="manage_contect">Manage Content</string>
 
 </resources>
