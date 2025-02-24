@@ -53,49 +53,6 @@ public class GateFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-        _CNA_BTN = findViewById(R.id._CNA_BTN);
 
-        _LOGIN_BTN = findViewById(R.id._LOGIN_BTN);
-
-        _CNA_BTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toRegister(v);
-            }
-        });
-        _LOGIN_BTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toLogin(v);
-            }
-        });
-    }
-
-    public void toLogin(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }
-    public void toRegister(View view) {
-        Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
-    }
-
-    private void loadFragment(Fragment fragment, String tag) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id._GATE_FRAGMENT, fragment, tag);
-        //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN); // Consider if you need this
-        //transaction.addToBackStack(null); // Consider if you need this
-        transaction.commit();
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gate, container, false);
     }
 }

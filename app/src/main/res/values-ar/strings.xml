@@ -42,5 +42,9 @@
     <string name="treat_complaint">Treat A Complaint</string>
     <string name="manage_users">Manage Users</string>
     <string name="manage_contect">Manage Content</string>
+    <string name="user_customer">العميل</string>
+    <string name="user_business">المتجر</string>
+    <string name="user_admin">الادارة</string>
+
 
 </resources>
