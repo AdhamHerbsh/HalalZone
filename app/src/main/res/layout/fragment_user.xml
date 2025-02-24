@@ -4,155 +4,312 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondary"
     tools:context=".UserFragment">
 
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
+        android:background="@color/secondary"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        
+        >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="50dp"
+            android:gravity=""
+            >
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                >
-
+                android:orientation="horizontal">
                 <ImageView
-                    android:id="@+id/_RESTAURANT_CARD"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/restaurant_card" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/circle_user_solid" />
 
                 <TextView
+                    android:id="@+id/textView3"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:labelFor="@id/_RESTAURANT_CARD"
-                    android:text="@string/restaurants" />
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:paddingStart="10dp"
+                    android:text="Hello Adham"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
 
             </LinearLayout>
+
+
             <LinearLayout
+                android:paddingTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                >
-                <ImageView
-                    android:id="@+id/_SHOP_CARD"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/shop_card"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:labelFor="@id/_RESTAURANT_CARD"
-                    android:text="@string/shops" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
-                    android:id="@+id/_QIBLA_CARD"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/qibla_card"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:labelFor="@id/_RESTAURANT_CARD"
-                    android:text="@string/qibla_direction" />
-
+                <include layout="@layout/edit_text_search"/>
             </LinearLayout>
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
+            android:layout_height="550dp"
+            android:orientation="vertical"
+            android:padding="45dp"
+            android:background="@drawable/rounded_top"
+            android:layout_alignParentBottom="true">
 
-                <ImageView
-                    android:id="@+id/_PRAYER_CARD"
+
+
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/prayer_card" />
+                    android:layout_height="150dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:labelFor="@id/_PRAYER_CARD"
-                    android:text="@string/prayer_time" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-                <ImageView
-                    android:id="@+id/_OFFERS_CARD"
+                    <LinearLayout
+                        android:id="@+id/_RESTAURANT_CARD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:padding="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rounded_box">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/utensils_solid" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:paddingTop="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="@string/restaurants" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/_SHOP_CARD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:padding="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rounded_box">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/store_solid" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:paddingTop="5dp"
+                            android:text="@string/shops" />
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/offers_card"/>
+                    android:layout_height="150dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:labelFor="@id/_OFFERS_CARD"
-                    android:text="@string/Offers" />
+                    <LinearLayout
+                        android:id="@+id/_OFFER_CARD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:padding="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rounded_box">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/tag_solid" />
 
-                <ImageView
-                    android:id="@+id/_VIDEOS_CARD"
+                        </LinearLayout>
+
+                        <TextView
+                            android:paddingTop="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="@string/Offers" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/_VIDEOS_CARD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:padding="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rounded_box">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/tv_solid" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:paddingTop="5dp"
+                            android:text="@string/Videos" />
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/videos_card"/>
+                    android:layout_height="150dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:labelFor="@id/_VIDEOS_CARD"
-                    android:text="@string/Videos" />
+                    <LinearLayout
+                        android:id="@+id/_QIBLA_CARD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
 
-            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:padding="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rounded_box">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/compass_solid" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:paddingTop="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="@string/qibla_direction" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/_PRAYER_CARD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:padding="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rounded_box">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/mosque_solid" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:paddingTop="5dp"
+                            android:text="@string/prayer_time" />
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
 
         </LinearLayout>
-    </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
 </FrameLayout>

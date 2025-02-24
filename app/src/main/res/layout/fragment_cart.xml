@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary"
+    tools:context=".CartFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="5dp"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_w_box"
+                android:layout_height="125dp"
+                >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imvCornerStroke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:src="@mipmap/ic_launcher_foreground"
+                    app:layout_constraintEnd_toStartOf="@+id/imvCornerRadiusWithStroke"
+                    app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17.5dp"
+                        android:textStyle="bold"
+                        android:text="Double Cheese Burger" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="#6A6A6A"
+                        android:text="Price: 150 EGP" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/circle_minus_solid" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="7dp"
+                            android:textSize="15dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="2" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/circle_plus_solid" />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/trash_can_solid" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="5dp"                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_w_box"
+                android:layout_height="125dp"
+                >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imvCornerStroke1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:src="@mipmap/ic_launcher_foreground"
+                    app:layout_constraintEnd_toStartOf="@+id/imvCornerRadiusWithStroke"
+                    app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17.5dp"
+                        android:textStyle="bold"
+                        android:text="Double Cheese Burger" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="#6A6A6A"
+                        android:text="Price: 150 EGP" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/circle_minus_solid" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="7dp"
+                            android:textSize="15dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="2" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/circle_plus_solid" />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/trash_can_solid" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="150dp"
+            android:padding="20dp"
+            android:background="@drawable/rounded_top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="Total: 600 EGP" />
+
+            <Button
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/containedButton"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/secondary"
+                android:text="CheckOut"
+                style="@style/Widget.MaterialComponents.Button"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</FrameLayout>

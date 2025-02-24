@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class GateActivity extends AppCompatActivity {
 
-    Button _LOGIN_BTN, _CNA_BTN;
+    Button USER_BTN, BUS_BTN, ADMIN_BTN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,33 +26,28 @@ public class GateActivity extends AppCompatActivity {
             return insets;
         });
 
-        _CNA_BTN = findViewById(R.id._CNA_BTN);
+        USER_BTN = findViewById(R.id.USER_BTN);
+        BUS_BTN = findViewById(R.id.BUS_BTN);
+        ADMIN_BTN = findViewById(R.id.ADMIN_BTN);
 
-        _LOGIN_BTN = findViewById(R.id._LOGIN_BTN);
-
-        _CNA_BTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toRegister(v);
-            }
-        });
-        _LOGIN_BTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toLogin(v);
-            }
-        });
+        USER_BTN.setOnClickListener(this::touser);
+        BUS_BTN.setOnClickListener(this::tobus);
+        BUS_BTN.setOnClickListener(this::toadmin);
 
 
     }
 
-    public void toLogin(View view) {
+    public void touser(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
-    public void toRegister(View view) {
-        Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
+    public void tobus(View view) {
+//        Intent intent = new Intent(this, .class);
+//        startActivity(intent);
+    }
+    public void toadmin(View view) {
+//        Intent intent = new Intent(this, .class);
+//        startActivity(intent);
     }
 
 

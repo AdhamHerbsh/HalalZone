@@ -1,5 +1,6 @@
 package com.example.halalzone;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +60,39 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false);
+        View view = inflater.inflate(R.layout.fragment_user, container, false);
+
+        LinearLayout qiblaCard = view.findViewById(R.id._QIBLA_CARD);
+        qiblaCard.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), QiblaActivity.class);
+            startActivity(intent);
+        });
+
+        LinearLayout resCard = view.findViewById(R.id._RESTAURANT_CARD);
+        resCard.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), RestuarantsActivity.class);
+            startActivity(intent);
+        });
+
+        LinearLayout shopsCard = view.findViewById(R.id._SHOP_CARD);
+        shopsCard.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ShopsActivity.class);
+            startActivity(intent);
+        });
+
+        LinearLayout prayersCard = view.findViewById(R.id._PRAYER_CARD);
+        prayersCard.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), PrayertimeActivity.class);
+            startActivity(intent);
+        });
+
+        LinearLayout offerCard = view.findViewById(R.id._OFFER_CARD);
+        offerCard.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), OfferActivity.class);
+            startActivity(intent);
+        });
+
+
+        return view;
     }
 }

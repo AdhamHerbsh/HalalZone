@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ItermActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/secondary"
+        android:elevation="5dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Item"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/baseline_arrow_back_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@mipmap/ic_launcher_foreground"
+        android:scaleType="fitXY" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:textStyle="bold"
+        android:textSize="27.5sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cheese Burger" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:textColor="#767676"
+        android:layout_height="wrap_content"
+        android:text="The Burgers" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:textColor="#767676"
+        android:layout_height="wrap_content"
+        android:text="A cheeseburger is a classic, juicy beef patty topped with melted cheese, usually served on a soft, toasted bun. It’s often layered with fresh lettuce, ripe tomatoes, crispy pickles, and onions, adding a refreshing crunch. A drizzle of ketchup, mustard, or mayonnaise enhances the flavor, while optional toppings like bacon, mushrooms, or jalapeños can add a unique twist. Whether served with crispy fries or a side of coleslaw, the cheeseburger remains a timeless favorite for burger lovers everywhere!" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:textSize="30sp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/secondary"
+            android:layout_height="wrap_content"
+            android:text="150 EGP" />
+
+        <Button
+            android:id="@+id/containedButton"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
+            android:text="Add to Cart"
+            style="@style/Widget.MaterialComponents.Button"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -41,21 +41,29 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/_CNA_BTN"
+            android:id="@+id/USER_BTN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/secondary"
             android:fontFamily="@font/poppins_bold"
-            android:text="@string/cna" />
+            android:text="@string/user" />
 
         <Button
-            android:id="@+id/_LOGIN_BTN"
+            android:id="@+id/BUS_BTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/middle"
+            android:fontFamily="@font /poppins_bold"
+            android:text="@string/business" />
+
+        <Button
+            android:id="@+id/ADMIN_BTN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/primary"
             android:fontFamily="@font/poppins_bold"
             android:onClick="toLogin"
-            android:text="@string/login" />
+            android:text="@string/admin" />
     </LinearLayout>
 
 </RelativeLayout>
