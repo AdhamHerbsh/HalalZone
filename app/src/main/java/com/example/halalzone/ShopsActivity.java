@@ -1,6 +1,7 @@
 package com.example.halalzone;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,10 @@ public class ShopsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_shops);
+
+        ImageView imageView = findViewById(R.id.myImage);
+        imageView.setImageResource(R.drawable.shop); // Change to your image resource
+
 
         // Set up Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);

@@ -62,7 +62,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/primary"
             android:fontFamily="@font/poppins_bold"
-            android:onClick="toLogin"
             android:text="@string/admin" />
     </LinearLayout>
 
