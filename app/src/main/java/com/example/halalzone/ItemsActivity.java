@@ -40,12 +40,12 @@ public class ItemsActivity extends AppCompatActivity {
         gridView = findViewById(R.id.grid_view1);
         ArrayList<itemModel> list = new ArrayList<>();
 
-        list.add(new itemModel("Cheese Burger","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new itemModel("Cheese Burger","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new itemModel("Cheese Burger","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new itemModel("Cheese Burger","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new itemModel("Cheese Burger","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new itemModel("Cheese Burger","100 EGP", R.mipmap.ic_launcher_foreground));
+        list.add(new itemModel("Cheese Burger","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new itemModel("Cheese Burger","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new itemModel("Cheese Burger","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new itemModel("Cheese Burger","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new itemModel("Cheese Burger","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new itemModel("Cheese Burger","100 SAR", R.mipmap.ic_launcher_foreground));
 
         GridViewAdapter2 adapter = new GridViewAdapter2(this, list);
         gridView.setAdapter(adapter);

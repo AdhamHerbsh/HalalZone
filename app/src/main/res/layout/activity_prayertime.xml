@@ -87,12 +87,27 @@
                     android:textSize="18sp" />
             </TableRow>
 
+            <!-- Sunrise -->
+            <TableRow>
+
+                <TextView
+                    android:padding="10dp"
+                    android:text="Fajr"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:text="07:00 AM"
+                    android:textSize="18sp" />
+            </TableRow>
+
             <!-- Dhuhr -->
             <TableRow>
 
                 <TextView
                     android:padding="10dp"
-                    android:text="Dhuhr"
+                    android:text="Sunrise"
                     android:textSize="18sp" />
 
                 <TextView

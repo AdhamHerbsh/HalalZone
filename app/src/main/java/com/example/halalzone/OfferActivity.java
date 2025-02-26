@@ -37,12 +37,12 @@ public class OfferActivity extends AppCompatActivity {
         gridView = findViewById(R.id.grid_view);
         ArrayList<OfferModel> list = new ArrayList<>();
 
-        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 EGP", R.mipmap.ic_launcher_foreground));
-        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 EGP", R.mipmap.ic_launcher_foreground));
+        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 SAR", R.mipmap.ic_launcher_foreground));
+        list.add(new OfferModel("Cheese Burger","The Burgers","150","100 SAR", R.mipmap.ic_launcher_foreground));
 
         GridViewAdapter adapter = new GridViewAdapter(this, list);
         gridView.setAdapter(adapter);

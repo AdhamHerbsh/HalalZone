@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:textColor="@color/secondary"
             android:layout_height="wrap_content"
-            android:text="150 EGP" />
+            android:text="150 SAR" />
 
         <Button
             android:id="@+id/containedButton"
