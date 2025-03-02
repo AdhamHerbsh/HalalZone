@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
                 fragment = new UserFragment();
                 break;
             case 1:
-//                fragment = new ScanFragment();
+                fragment = new scanFragment();
                 break;
             case 2:
                 fragment = new CartFragment();

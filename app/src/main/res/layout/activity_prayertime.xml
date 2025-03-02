@@ -92,7 +92,7 @@
 
                 <TextView
                     android:padding="10dp"
-                    android:text="Fajr"
+                    android:text="Sunrise"
                     android:textSize="18sp" />
 
                 <TextView
@@ -107,7 +107,7 @@
 
                 <TextView
                     android:padding="10dp"
-                    android:text="Sunrise"
+                    android:text="Dhuhr"
                     android:textSize="18sp" />
 
                 <TextView

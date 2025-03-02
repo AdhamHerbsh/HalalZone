@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ItermActivity">
+    tools:context=".ItemActivity">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:textColor="#767676"
         android:layout_height="wrap_content"
-        android:text="A cheeseburger is a classic, juicy beef patty topped with melted cheese, usually served on a soft, toasted bun. It’s often layered with fresh lettuce, ripe tomatoes, crispy pickles, and onions, adding a refreshing crunch. A drizzle of ketchup, mustard, or mayonnaise enhances the flavor, while optional toppings like bacon, mushrooms, or jalapeños can add a unique twist. Whether served with crispy fries or a side of coleslaw, the cheeseburger remains a timeless favorite for burger lovers everywhere!" />
+        android:text="A cheeseburger is a classic, juicy beef patty topped with melted cheese, usually served on a soft, toasted bun. It’s often layered with fresh lettuce, ripe tomatoes, crispy pickles, and onions, adding a refreshing crunch. A drizzle of ketchup, mustard, or mayonnaise enhances the flavor, mushrooms, the cheeseburger remains a timeless favorite for burger lovers everywhere!" />
 
     <LinearLayout
         android:layout_width="match_parent"

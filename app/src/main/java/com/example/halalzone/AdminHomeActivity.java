@@ -11,44 +11,41 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class GateActivity extends AppCompatActivity {
+public class AdminHomeActivity extends AppCompatActivity {
 
-    Button USER_BTN, BUS_BTN, ADMIN_BTN;
+    Button report, add, mng, video, warning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_gate);
+        setContentView(R.layout.activity_admin_home);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        USER_BTN = findViewById(R.id.USER_BTN);
-        BUS_BTN = findViewById(R.id.BUS_BTN);
-        ADMIN_BTN = findViewById(R.id.ADMIN_BTN);
+        report = findViewById(R.id.report);
+        report.setOnClickListener(this::toreport);
 
-        USER_BTN.setOnClickListener(this::touser);
-        BUS_BTN.setOnClickListener(this::tobus);
-        ADMIN_BTN.setOnClickListener(this::toadmin);
+        add = findViewById(R.id.addd);
+        add.setOnClickListener(this::toadd);
 
+        mng = findViewById(R.id.mng);
+        mng.setOnClickListener(this::tomng);
 
     }
-
-    public void touser(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
+    public void toreport(View view) {
+        Intent intent = new Intent(this, ReportsActivity.class);
         startActivity(intent);
     }
-    public void tobus(View view) {
-//        Intent intent = new Intent(this, .class);
-//        startActivity(intent);
-    }
-    public void toadmin(View view) {
-        Intent intent = new Intent(this, AdminLoginActivity.class);
+    public void toadd(View view) {
+        Intent intent = new Intent(this, AddBusinessActivity.class);
         startActivity(intent);
     }
-
-
+    public void tomng(View view) {
+        Intent intent = new Intent(this, MngBusinessActivity.class);
+        startActivity(intent);
+    }
 }

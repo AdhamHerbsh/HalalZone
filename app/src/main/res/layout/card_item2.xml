@@ -37,16 +37,17 @@
             android:textAlignment="textStart" />
 
 
-        <TextView
-            android:id="@+id/text_view3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="5dp"
-            android:text="100 SAR"
-            android:textAlignment="textEnd"
-            android:textColor="@color/secondary"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:textAlignment="textEnd"
+                android:id="@+id/text_view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100 SAR"
+                android:textSize="20sp"
+                android:paddingStart="5dp"
+                android:textColor="@color/secondary"
+                android:textStyle="bold"
+                />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

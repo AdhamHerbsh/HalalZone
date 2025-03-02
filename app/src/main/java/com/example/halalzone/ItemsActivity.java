@@ -60,7 +60,7 @@ public class ItemsActivity extends AppCompatActivity {
                 Toast.makeText(ItemsActivity.this, "Clicked: " + selectedItem.getName(), Toast.LENGTH_SHORT).show();
 
                 // Open a new activity and pass data
-                Intent intent = new Intent(ItemsActivity.this, ItermActivity.class);
+                Intent intent = new Intent(ItemsActivity.this, ItemActivity.class);
 //                intent.putExtra("name", selectedItem.getName());
 //                intent.putExtra("price", selectedItem.getNewprice();
 //                intent.putExtra("image", selectedItem.getImage());

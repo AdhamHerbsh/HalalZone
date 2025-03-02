@@ -65,15 +65,16 @@
                 android:background="@drawable/dashed_underline"/>
 
             <TextView
+                android:gravity="end"
                 android:id="@+id/text_view3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="end"
-                android:paddingStart="5dp"
                 android:text="100 SAR"
-                android:textColor="@color/secondary"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:paddingStart="5dp"
+                android:textColor="@color/secondary"
+                android:textStyle="bold"
+                />
         </LinearLayout>
 
     </LinearLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/rounded_box_2"
+            >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#"
+                    android:textColor="#828282"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:id="@+id/textViewOrderID"
+                    android:textColor="#828282"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#"
+                    android:textColor="#828282"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:id="@+id/textViewOrderItemID"
+                    android:textColor="#828282"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="2dp"
+
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/0/0000"
+                android:id="@+id/textViewDate"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description "
+                android:id="@+id/textViewDesc"
+                android:textColor="#828282"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+
+                />
+        </LinearLayout>
+
+
+
+</RelativeLayout>
