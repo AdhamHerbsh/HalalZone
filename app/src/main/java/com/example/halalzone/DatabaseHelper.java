@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper  extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "MyDatabase.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 4;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -24,14 +24,13 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL, phone TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS BUSINESSES " +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL, phone TEXT NOT NULL, status TEXT NOT NULL)");
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL, phone TEXT NOT NULL, status TEXT NOT NULL, business_email TEXT NOT NULL)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS CATEGORY " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE NOT NULL)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS ITEM " +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT, category_id INTEGER NOT NULL, name TEXT NOT NULL, price REAL NOT NULL, dis_price REAL, description TEXT, " +
-                "FOREIGN KEY (category_id) REFERENCES CATEGORY(id))");
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, category_id TEXT NOT NULL, name TEXT NOT NULL, price REAL NOT NULL, dis_price REAL, description TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS CART_ITEM " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, item_id INTEGER NOT NULL, username TEXT NOT NULL, " +
@@ -71,18 +70,27 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS ADMIN");
-        db.execSQL("DROP TABLE IF EXISTS USER");
-        db.execSQL("DROP TABLE IF EXISTS BUSINESSES");
-        db.execSQL("DROP TABLE IF EXISTS CATEGORY");
-        db.execSQL("DROP TABLE IF EXISTS ITEM");
-        db.execSQL("DROP TABLE IF EXISTS CART_ITEM");
-        db.execSQL("DROP TABLE IF EXISTS ORDER_TABLE");
-        db.execSQL("DROP TABLE IF EXISTS ORDER_ITEM");
-        db.execSQL("DROP TABLE IF EXISTS PROBLEM");
-        db.execSQL("DROP TABLE IF EXISTS BUSINESSES_REVIEWS");
-        db.execSQL("DROP TABLE IF EXISTS BUSINESSES_WARNING");
-        onCreate(db);
+//        db.execSQL("DROP TABLE IF EXISTS ADMIN");
+//        db.execSQL("DROP TABLE IF EXISTS USER");
+//        db.execSQL("DROP TABLE IF EXISTS BUSINESSES");
+//        db.execSQL("DROP TABLE IF EXISTS CATEGORY");
+//        db.execSQL("DROP TABLE IF EXISTS ITEM");
+//        db.execSQL("DROP TABLE IF EXISTS CART_ITEM");
+//        db.execSQL("DROP TABLE IF EXISTS ORDER_TABLE");
+//        db.execSQL("DROP TABLE IF EXISTS ORDER_ITEM");
+//        db.execSQL("DROP TABLE IF EXISTS PROBLEM");
+//        db.execSQL("DROP TABLE IF EXISTS BUSINESSES_REVIEWS");
+//        db.execSQL("DROP TABLE IF EXISTS BUSINESSES_WARNING");
+//        onCreate(db);
+//        try {
+//            db.execSQL("ALTER TABLE ITEM ADD COLUMN business_email TEXT NOT NULL DEFAULT ''");
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        db.execSQL("DROP TABLE IF EXISTS ITEM");
+//        db.execSQL("CREATE TABLE IF NOT EXISTS ITEM " +
+//                "(id INTEGER PRIMARY KEY AUTOINCREMENT, category_id TEXT NOT NULL, " +
+//                "name TEXT NOT NULL, price REAL NOT NULL, dis_price REAL, description TEXT)");
 
     }
 
@@ -96,6 +104,17 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
             return false;
         }
     }
+
+    public Boolean checkbusiness (String email, String Password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from BUSINESSES where email = ? and password = ?",new String[]{email,Password});
+        if (cursor.getCount() > 0 ) {
+            return true;
+        }   else{
+            return false;
+        }
+    }
+
 
     public Boolean adduser(String email,String Name,String Password,String Phone){
         SQLiteDatabase MyDB = this.getWritableDatabase();
@@ -112,7 +131,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean addadmin(String email,String Name,String Password,String Phone){
+    public Boolean addbusiness(String email,String Name,String Password,String Phone){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("email",email);
@@ -121,6 +140,23 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         contentValues.put("phone",Phone);
         contentValues.put("status","Done");
         long result = MyDB.insert("BUSINESSES",null,contentValues);
+        if (result == -1 ) {
+            return false;
+        }   else{
+            return true;
+        }
+    }
+
+    public Boolean addproduct(String category_id,String Name,String business_email,double price,double dis_price,String description){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("category_id",category_id);
+        contentValues.put("Name",Name);
+        contentValues.put("business_email",business_email);
+        contentValues.put("price",price);
+        contentValues.put("dis_price",dis_price);
+        contentValues.put("description",description);
+        long result = MyDB.insert("ITEM",null,contentValues);
         if (result == -1 ) {
             return false;
         }   else{

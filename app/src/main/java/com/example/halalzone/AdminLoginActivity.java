@@ -18,7 +18,6 @@ public class AdminLoginActivity extends AppCompatActivity {
     Button LOG_LOGIN_BTN;
     EditText emailInput, passwordInput;
     DatabaseHelper dbHelper;
-    SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

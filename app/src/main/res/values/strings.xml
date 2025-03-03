@@ -49,11 +49,8 @@
     <string name="business">Business</string>
     <string name="admin">Admin</string>
 
-
     <string name="user_customer">User</string>
     <string name="user_business">Business</string>
     <string name="user_admin">Admin</string>
-
-
 
 </resources>
