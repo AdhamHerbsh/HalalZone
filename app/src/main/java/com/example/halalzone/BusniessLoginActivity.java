@@ -8,20 +8,19 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.content.Context;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.halalzone.databinding.ActivityBusniessLoginBinding;
 
 public class BusniessLoginActivity extends AppCompatActivity {
 
-    Button LOG_LOGIN_BTN;
+    Button LOG_LOGIN_BTN, LOG_SIGNUP_BTN;
     EditText emailInput, passwordInput;
     DatabaseHelper dbHelper;
     SharedPreferences sharedPref;
-    ActivityBusniessLoginBinding binding;
 
 
     public void saveBusiness(String username) {
@@ -33,8 +32,8 @@ public class BusniessLoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityBusniessLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_busniess_login);
         dbHelper = new DatabaseHelper(this);
         sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
 
@@ -42,7 +41,7 @@ public class BusniessLoginActivity extends AppCompatActivity {
         LOG_LOGIN_BTN = findViewById(R.id.LOG_LOGIN_BTN);
         emailInput = findViewById(R.id._EMAIL_INPUT);
         passwordInput = findViewById(R.id._PASSWORD_INPUT);
-
+        LOG_SIGNUP_BTN = findViewById(R.id.LOG_SIGNUP_BTN);
         LOG_LOGIN_BTN.setOnClickListener(v -> {
             String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
@@ -54,6 +53,12 @@ public class BusniessLoginActivity extends AppCompatActivity {
             }else{
                 Toast.makeText(this, "Invalid Info", Toast.LENGTH_SHORT).show();
             }
+
+        });
+
+        LOG_SIGNUP_BTN.setOnClickListener(v -> {
+            Intent intent = new Intent(this, BusinessSignUpActivity.class);
+            startActivity(intent);
 
         });
 

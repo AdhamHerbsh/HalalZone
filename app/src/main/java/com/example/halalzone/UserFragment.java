@@ -1,6 +1,8 @@
 package com.example.halalzone;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,20 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link UserFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class UserFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -30,15 +26,7 @@ public class UserFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UserFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static UserFragment newInstance(String param1, String param2) {
         UserFragment fragment = new UserFragment();
         Bundle args = new Bundle();
@@ -57,10 +45,25 @@ public class UserFragment extends Fragment {
         }
     }
 
+    private DatabaseHelper databaseHelper;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user, container, false);
+        databaseHelper = new DatabaseHelper(getContext());
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("User", "User"); // Default is "User" if no email is found
+        TextView userTextView = view.findViewById(R.id.textView3);
+
+        if (!userEmail.isEmpty()) {
+            // Fetch name from database
+            String userName = databaseHelper.getname(userEmail);
+            userTextView.setText("Hello " + userName);
+        } else {
+            userTextView.setText("Guest"); // Default text if email is missing
+        }
 
         LinearLayout qiblaCard = view.findViewById(R.id._QIBLA_CARD);
         qiblaCard.setOnClickListener(v -> {
@@ -89,6 +92,12 @@ public class UserFragment extends Fragment {
         LinearLayout offerCard = view.findViewById(R.id._OFFER_CARD);
         offerCard.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), OfferActivity.class);
+            startActivity(intent);
+        });
+
+        LinearLayout VCard = view.findViewById(R.id._VIDEOS_CARD);
+        VCard.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), YoutubeWebviewActivity.class);
             startActivity(intent);
         });
 

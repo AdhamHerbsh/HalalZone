@@ -1,23 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main" android:background="@color/secondary" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".PrayertimeActivity"> <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:background="@color/secondary" android:elevation="5dp" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:title="@string/prayer_time" app:titleTextColor="@color/white" app:navigationIcon="@drawable/baseline_arrow_back_24" tools:ignore="MissingConstraints" /> <ImageView android:layout_width="200dp" android:layout_height="200dp" android:layout_above="@+id/panel" android:layout_centerHorizontal="true" android:src="@drawable/mosque_solid" /> <LinearLayout android:id="@+id/panel" android:layout_width="match_parent" android:layout_height="450dp" android:layout_alignParentBottom="true" android:background="@drawable/rounded_top" android:gravity="center" android:orientation="vertical" android:padding="25dp"> <TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@color/white" android:stretchColumns="2"> <!-- Table Header --> <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-
-    <TextView
-        android:layout_width="148dp"
-        android:layout_height="wrap_content"
-        android:background="@color/primary"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Prayer"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="136dp"
-        android:layout_height="wrap_content"
-        android:background="@color/primary"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Time"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" /> </TableRow> <!-- Fajr --> <TableRow> <TextView android:padding="10dp" android:text="Fajr" android:textSize="18sp" /> <TextView android:layout_width="match_parent" android:padding="10dp" android:text="05:00 AM" android:textSize="18sp" /> </TableRow> <!-- Sunrise --> <TableRow> <TextView android:padding="10dp" android:text="Sunrise" android:textSize="18sp" /> <TextView android:layout_width="match_parent" android:padding="10dp" android:text="07:00 AM" android:textSize="18sp" /> </TableRow> <!-- Dhuhr --> <TableRow> <TextView android:padding="10dp" android:text="Dhuhr" android:textSize="18sp" /> <TextView android:padding="10dp" android:text="12:00 PM" android:textSize="18sp" /> </TableRow> <!-- Asr --> <TableRow> <TextView android:padding="10dp" android:text="Asr" android:textSize="18sp" /> <TextView android:padding="10dp" android:text="03:15 PM" android:textSize="18sp" /> </TableRow> <!-- Maghrib --> <TableRow> <TextView android:padding="10dp" android:text="Maghrib" android:textSize="18sp" /> <TextView android:padding="10dp" android:text="05:30 PM" android:textSize="18sp" /> </TableRow> <!-- Isha --> <TableRow> <TextView android:padding="10dp" android:text="Isha" android:textSize="18sp" /> <TextView android:padding="10dp" android:text="09:00 PM" android:textSize="18sp" /> </TableRow> </TableLayout> </LinearLayout></RelativeLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main" android:background="@color/secondary" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".PrayertimeActivity">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:background="@color/secondary" android:elevation="5dp" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:title="@string/prayer_time" app:titleTextColor="@color/white" app:navigationIcon="@drawable/baseline_arrow_back_24" tools:ignore="MissingConstraints" />
+    <ImageView android:layout_width="200dp" android:layout_height="200dp" android:layout_above="@+id/panel" android:layout_centerHorizontal="true" android:src="@drawable/mosque_solid" />
+    <LinearLayout android:id="@+id/panel" android:layout_width="match_parent" android:layout_height="450dp" android:layout_alignParentBottom="true" android:background="@drawable/rounded_top" android:gravity="center" android:orientation="vertical" android:padding="25dp">
+        <TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@color/white" android:stretchColumns="2">
+            <!-- Table Header -->
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primary"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Prayer"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="136dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primary"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Time"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
+            <!-- Fajr -->
+            <TableRow>
+                <TextView android:padding="10dp" android:text="Fajr" android:textSize="18sp" />
+                <TextView android:id="@+id/fajrTime" android:layout_width="match_parent" android:padding="10dp" android:text="00:00" android:textSize="18sp" />
+            </TableRow>
+            <!-- Sunrise -->
+            <TableRow>
+                <TextView android:padding="10dp" android:text="Sunrise" android:textSize="18sp" />
+                <TextView android:id="@+id/sunriseTime" android:layout_width="match_parent" android:padding="10dp" android:text="00:00" android:textSize="18sp" />
+            </TableRow>
+            <!-- Dhuhr -->
+            <TableRow>
+                <TextView android:padding="10dp" android:text="Dhuhr" android:textSize="18sp" />
+                <TextView android:id="@+id/dhuhrTime" android:padding="10dp" android:text="00:00" android:textSize="18sp" />
+            </TableRow>
+            <!-- Asr -->
+            <TableRow>
+                <TextView android:padding="10dp" android:text="Asr" android:textSize="18sp" />
+                <TextView android:id="@+id/asrTime" android:padding="10dp" android:text="00:00" android:textSize="18sp" />
+            </TableRow>
+            <!-- Maghrib -->
+            <TableRow>
+                <TextView android:padding="10dp" android:text="Maghrib" android:textSize="18sp" />
+                <TextView android:id="@+id/maghribTime" android:padding="10dp" android:text="00:00" android:textSize="18sp" />
+            </TableRow>
+            <!-- Isha -->
+            <TableRow>
+                <TextView android:padding="10dp" android:text="Isha" android:textSize="18sp" />
+                <TextView android:id="@+id/ishaTime" android:padding="10dp" android:text="00:00" android:textSize="18sp" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</RelativeLayout>

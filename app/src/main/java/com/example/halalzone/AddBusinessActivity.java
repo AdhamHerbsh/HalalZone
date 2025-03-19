@@ -30,7 +30,10 @@ public class AddBusinessActivity extends AppCompatActivity {
                 String name = binding.editTextName.getText().toString().trim();
                 String password = binding.editTextPassword.getText().toString().trim();
                 String Phone = binding.editTextPhone.getText().toString().trim();
-                Boolean insertuser = databaseHelper.addbusiness(username,name,password,Phone);
+                int selectedRadioButtonId = binding.radioGroupBusinessType.getCheckedRadioButtonId();
+                String businessType = selectedRadioButtonId == R.id.radioShop ? "Shop" : "Restaurant";
+
+                Boolean insertuser = databaseHelper.addbusiness(username,name,password,Phone,businessType);
                 if(insertuser){
                     Toast.makeText(AddBusinessActivity.this, "success" , Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddBusinessActivity.this, AdminHomeActivity.class);

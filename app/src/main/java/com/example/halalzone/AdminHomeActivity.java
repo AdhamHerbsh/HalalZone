@@ -1,9 +1,11 @@
 package com.example.halalzone;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AdminHomeActivity extends AppCompatActivity {
 
-    Button report, add, mng, video, warning;
+    LinearLayout report, add, mng, video, warning;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,12 @@ public class AdminHomeActivity extends AppCompatActivity {
         mng = findViewById(R.id.mng);
         mng.setOnClickListener(this::tomng);
 
+        warning = findViewById(R.id.warning);
+        warning.setOnClickListener(this::towarning);
+
+        video = findViewById(R.id.video);
+        video.setOnClickListener(this::tovedio);
+
     }
     public void toreport(View view) {
         Intent intent = new Intent(this, ReportsActivity.class);
@@ -46,6 +55,15 @@ public class AdminHomeActivity extends AppCompatActivity {
     }
     public void tomng(View view) {
         Intent intent = new Intent(this, MngBusinessActivity.class);
+        startActivity(intent);
+    }
+
+    public void towarning(View view) {
+        Intent intent = new Intent(this, AllWarningsActivity.class);
+        startActivity(intent);
+    }
+    public void tovedio(View view) {
+        Intent intent = new Intent(this, AddVideoActivity.class);
         startActivity(intent);
     }
 }

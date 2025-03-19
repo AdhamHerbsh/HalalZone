@@ -1,57 +1,50 @@
 package com.example.halalzone;
 
+import android.graphics.Bitmap;
+
 public class OfferModel {
+    private int itemId;
     private String name;
     private String business;
-    private String oldprice;
-    private String newprice;
-    private int image;
+    private String oldPrice;
+    private String newPrice;
+    private Bitmap image;
 
-    public OfferModel(String name,String business,String oldprice,String newprice, int image) {
+    public OfferModel(int itemId, String name, String business, String oldPrice, String newPrice, Bitmap image) {
+        this.itemId = itemId;
         this.name = name;
         this.business = business;
-        this.oldprice = oldprice;
-        this.newprice = newprice;
+        this.oldPrice = oldPrice;
+        this.newPrice = newPrice;
         this.image = image;
     }
 
-
-    public void setBusiness(String business) {
-        this.business = business;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setOldprice(String oldprice) {
-        this.oldprice = oldprice;
-    }
-
-    public void setNewprice(String newprice) {
-        this.newprice = newprice;
-    }
-
-
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public int getImage() {
-        return image;
-    }
-    public String getOldprice() {
-        return oldprice;
-    }
-    public String getNewprice() {
-        return newprice;
-    }
-    public String getBusiness() {
-        return business;
-    }
     public String getName() {
         return name;
     }
 
+    public String getBusiness() {
+        return business;
+    }
+
+    public String getOldprice() {
+        return oldPrice;
+    }
+
+    public String getNewprice() {
+        return newPrice;
+    }
+
+    public Bitmap getImage() {
+        return image;
+    }
 }
+
+
+
+
+

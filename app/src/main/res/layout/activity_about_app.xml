@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutAppActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/secondary"
+        android:elevation="5dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="About App"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/baseline_arrow_back_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="25dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/icon"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HalalZone is your go-to app for discovering and managing halal food options with ease. Our mission is to provide a seamless experience where you can explore a wide range of halal-certified products, access exclusive discounts, track your order history, and make informed food choices that align with your values. With a user-friendly interface and personalized recommendations, HalalZone ensures you have access to high-quality, trustworthy halal meals and products, making it easier than ever to enjoy food that fits your dietary needs. Thank you for choosing HalalZone as your trusted companion in halal dining!"
+        android:padding="20dp"
+        android:textSize="15sp"
+        />
+</LinearLayout>

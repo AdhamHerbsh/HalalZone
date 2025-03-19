@@ -1,42 +1,68 @@
 package com.example.halalzone;
 
 public class itemModel {
+    private int id;
     private String name;
-    private String newprice;
-    private int image;
+    private String price;
+    private String disprice;
+    private byte[] image;
+    private String businessEmail;
 
-    public itemModel(String name, String newprice, int image) {
+    // Constructor for itemModel
+    public itemModel(int id, String name, String price, String disprice,  byte[] image) {
+        this.id = id;
         this.name = name;
-        this.newprice = newprice;
+        this.price = price;
+        this.disprice = disprice;
         this.image = image;
     }
 
-
-
-    public void setName(String name) {
-        this.name = name;
+    // Getters and Setters
+    public int getId() {
+        return id;
     }
 
-
-    public void setNewprice(String newprice) {
-        this.newprice = newprice;
-    }
-
-
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public int getImage() {
-        return image;
-    }
-    public String getNewprice() {
-        return newprice;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getprice() {
+        return price;
+    }
+
+    public void setprice(String price) {
+        this.price = price;
+    }
+
+    public String getDisprice() {
+        return disprice;
+    }
+
+    public void setDisprice(String disprice) {
+        this.disprice = disprice;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public String getBusinessEmail() {
+        return businessEmail;
+    }
+
+    public void setBusinessEmail(String businessEmail) {
+        this.businessEmail = businessEmail;
+    }
 }

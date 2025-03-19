@@ -8,8 +8,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class ShopsActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private BusinessAdapter businessAdapter;
+    private DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,16 @@ public class ShopsActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        dbHelper = new DatabaseHelper(this);
+
+        // Fetch businesses where status != "blocked" and type = "restaurants"
+        List<Business> businessList = dbHelper.getBusinesses("Shop");
+        businessAdapter = new BusinessAdapter(this, businessList);
+        recyclerView.setAdapter(businessAdapter);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

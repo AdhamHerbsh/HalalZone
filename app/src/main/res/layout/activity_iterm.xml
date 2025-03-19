@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +6,6 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".ItermActivity">
-
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -22,11 +20,10 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
+        android:id="@+id/itemImageView"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:src="@mipmap/ic_launcher_foreground"
         android:scaleType="fitXY" />
-
 
     <TextView
         android:id="@+id/textView4"
@@ -58,7 +55,7 @@
         android:layout_width="match_parent"
         android:textColor="#767676"
         android:layout_height="wrap_content"
-        android:text="A cheeseburger is a classic, juicy beef patty topped with melted cheese, usually served on a soft, toasted bun. It’s often layered with fresh lettuce, ripe tomatoes, crispy pickles, and onions, adding a refreshing crunch. A drizzle of ketchup, mustard, or mayonnaise enhances the flavor!" />
+        android:text="A cheeseburger is a classic..." />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,7 +73,7 @@
             android:layout_width="match_parent"
             android:textColor="@color/secondary"
             android:layout_height="wrap_content"
-            android:text="150 SAR" />
+            android:text="150 USD" />
 
         <Button
             android:id="@+id/containedButton"
@@ -90,8 +87,6 @@
             android:text="Add to Cart"
             style="@style/Widget.MaterialComponents.Button"
             />
-
     </LinearLayout>
-
 
 </LinearLayout>

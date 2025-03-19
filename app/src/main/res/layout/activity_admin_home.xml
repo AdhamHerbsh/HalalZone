@@ -5,77 +5,254 @@
     android:id="@+id/main"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/secondary"
     android:layout_height="match_parent"
     tools:context=".AdminHomeActivity">
 
-    <Button
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="5dp"
-        android:layout_margin="5dp"
-        android:text="Reports"
-        android:id="@+id/report"
-        style="@style/Widget.MaterialComponents.Button"
-        android:backgroundTint="@color/secondary"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        />
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="45dp"
+        >
 
-    <Button
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/circle_user_solid" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:paddingStart="15dp"
+                android:text="Hello Admin"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:text="Add Business"
-        android:id="@+id/addd"
-        style="@style/Widget.MaterialComponents.Button"
-        android:backgroundTint="@color/secondary"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:text="Manage Businesses"
-        android:id="@+id/mng"
-        style="@style/Widget.MaterialComponents.Button"
-        android:backgroundTint="@color/secondary"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:text="Videos"
-        android:id="@+id/video"
-        style="@style/Widget.MaterialComponents.Button"
-        android:backgroundTint="@color/secondary"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:layout_marginBottom="10dp"
-        android:text="Warnings"
-        android:id="@+id/warning"
-        style="@style/Widget.MaterialComponents.Button"
-        android:backgroundTint="@color/secondary"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        />
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:padding="45dp"
+        android:background="@drawable/rounded_top"
+        >
 
 
 
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/addd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_box">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/plus_solid" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Add Business" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/mng"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_box">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/clipboard_list_solid" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingTop="5dp"
+                    android:text="Manage Business" />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/report"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_box">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/comment_dots_solid" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Reports" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/warning"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_box">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/triangle_exclamation_solid" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingTop="5dp"
+                    android:text="Warning" />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/video"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_box">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/tv_solid" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/Videos" />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
 
 </LinearLayout>

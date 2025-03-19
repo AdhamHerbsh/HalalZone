@@ -1,89 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    android:padding="10dp"
+    android:background="@color/light_gray">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@android:color/white">
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:background="@drawable/rounded_box_2"
-            >
+            android:padding="8dp">
 
+            <!-- Order IDs -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#"
-                    android:textColor="#828282"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray_dark"
+                    android:layout_marginEnd="4dp" />
 
-                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="00"
                     android:id="@+id/textViewOrderID"
-                    android:textColor="#828282"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="2dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
 
-                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#"
-                    android:textColor="#828282"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray_dark"
+                    android:layout_marginEnd="4dp" />
 
-                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="00"
                     android:id="@+id/textViewOrderItemID"
-                    android:textColor="#828282"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="2dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
 
-                    />
             </LinearLayout>
 
+            <!-- Date -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0/0/0000"
                 android:id="@+id/textViewDate"
+                android:textSize="14sp"
                 android:textColor="@color/black"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginVertical="2dp"
+                android:textStyle="bold"
+                android:layout_marginVertical="6dp" />
 
-                />
-
+            <!-- Description -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description Problem description "
+                android:text="Problem description goes here..."
                 android:id="@+id/textViewDesc"
-                android:textColor="#828282"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginVertical="2dp"
+                android:textSize="14sp"
+                android:textColor="@color/gray_dark"
+                android:maxLines="4"
+                android:ellipsize="end"
+                android:layout_marginTop="4dp" />
 
-                />
+            <!-- Status & Update Button -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status: "
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewStatus"
+                    android:text="Pending"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_dark"
+                    android:layout_marginStart="4dp"/>
+
+                <Button
+                    android:id="@+id/buttonUpdateStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mark as Done"
+                    android:textSize="14sp"
+                    android:layout_marginStart="16dp"
+                    android:padding="6dp"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
         </LinearLayout>
-
-
-
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

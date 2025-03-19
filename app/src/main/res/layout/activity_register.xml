@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="150dp"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
 
     <LinearLayout
@@ -54,22 +54,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
-        <EditText
-            android:id="@+id/_PHONE_INPUT"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/input_bg"
-            android:backgroundTint="@color/secondary"
-            android:ems="20"
-            android:hint="@string/phone_placeholder"
-            android:importantForAutofill="yes"
-            android:inputType="textEmailAddress"
-            android:outlineSpotShadowColor="@color/black"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+
 
 
         <EditText
@@ -89,6 +74,41 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- Country Code Spinner -->
+            <Spinner
+                android:id="@+id/country_code_spinner"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@color/secondary"
+                android:importantForAutofill="yes"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/_PHONE_INPUT"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@color/secondary"
+                android:ems="20"
+                android:hint="@string/phone_placeholder"
+                android:importantForAutofill="yes"
+                android:inputType="textEmailAddress"
+                android:outlineSpotShadowColor="@color/black"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
         <EditText
             android:id="@+id/_PASSWORD_INPUT"
             android:layout_width="match_parent"

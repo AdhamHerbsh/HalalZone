@@ -11,9 +11,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.halalzone.databinding.ActivityReportsBinding;
 
 public class ReportsActivity extends AppCompatActivity {
-
-    DatabaseHelper databaseHelper;
-    ActivityReportsBinding binding;
+    private DatabaseHelper databaseHelper;
+    private ActivityReportsBinding binding;
+    private ProblemsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class ReportsActivity extends AppCompatActivity {
     private void loadData() {
         Cursor cursor = databaseHelper.getProblems();
         if (cursor != null) {
-            ProblemsAdapter adapter = new ProblemsAdapter(this, cursor, 0);
+            adapter = new ProblemsAdapter(this, cursor, 0);
             binding.listview.setAdapter(adapter);
         }
     }

@@ -101,14 +101,14 @@
             android:text="@string/sign_up"
             android:textColor="@color/primary" />
 
-        <TextView
-            android:id="@+id/_FORGOT_PASS_BTN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="@string/forgot_password"
-            android:textAlignment="center"
-            android:textColor="@color/secondary" />
+<!--        <TextView-->
+<!--            android:id="@+id/_FORGOT_PASS_BTN"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/poppins"-->
+<!--            android:text="@string/forgot_password"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/secondary" />-->
 
     </LinearLayout>
 

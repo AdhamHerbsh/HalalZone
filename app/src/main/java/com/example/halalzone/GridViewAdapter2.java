@@ -1,6 +1,8 @@
 package com.example.halalzone;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +20,6 @@ public class GridViewAdapter2 extends ArrayAdapter<itemModel> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         View itemView = convertView;
         if (itemView == null) {
             itemView = LayoutInflater.from(getContext()).inflate(R.layout.card_item2, parent, false);
@@ -32,8 +33,14 @@ public class GridViewAdapter2 extends ArrayAdapter<itemModel> {
 
         if (model != null) {
             textView.setText(model.getName());
-            textView3.setText(model.getNewprice());
-            imageView.setImageResource(model.getImage());
+            textView3.setText(model.getprice());
+
+            // Convert byte[] to Bitmap and set it to the ImageView
+            byte[] imageBytes = model.getImage();
+            if (imageBytes != null) {
+                Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+                imageView.setImageBitmap(bitmap);
+            }
         }
 
         return itemView;

@@ -1,27 +1,35 @@
 package com.example.halalzone;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
+    private SharedPreferences sharedPref;
+
+    // Get the username from SharedPreferences
+    public String getUserName() {
+        return sharedPref.getString("User", "User");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
 
         tabLayout = findViewById(R.id._TAB_LAYOUT);
 
         if (savedInstanceState == null) {
-            loadFragment(new UserFragment());
+            loadFragment(new UserFragment()); // Load default fragment only if there's no saved state
         }
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -50,28 +58,26 @@ public class HomeActivity extends AppCompatActivity {
                 fragment = new UserFragment();
                 break;
             case 1:
-                fragment = new scanFragment();
+                fragment = new scanFragment(); // Changed from scanFragment to ScanFragment
                 break;
             case 2:
-                fragment = new CartFragment();
+                fragment = CartFragment.newInstance(getUserName());
                 break;
             case 3:
-//                fragment = new MenuFragment();
+                fragment = new UserSettingsFragment();
                 break;
             default:
                 Toast.makeText(this, "Invalid Tab Selected", Toast.LENGTH_SHORT).show();
                 return;
         }
 
-        if (fragment != null) {
-            loadFragment(fragment);
-        }
+        loadFragment(fragment);
     }
 
     private void loadFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
-                .addToBackStack(null)  // Enables back navigation
+                .addToBackStack(null) // Enables back navigation
                 .commit();
     }
 }
