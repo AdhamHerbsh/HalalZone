@@ -7,23 +7,29 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-     >
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/txt_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Scan a barcode"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"
+            android:padding="16dp"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginHorizontal="10dp"
-        android:text="Scan"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/btn_scan"
-        style="@style/Widget.MaterialComponents.Button"
-        android:backgroundTint="@color/secondary"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        />
-
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:text="Scan"
+            android:layout_alignParentBottom="true"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/secondary"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
     </RelativeLayout>
 </FrameLayout>

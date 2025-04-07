@@ -1,5 +1,7 @@
 package com.example.halalzone;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,11 +23,16 @@ public class OfferActivity extends AppCompatActivity {
     private GridView gridView;
     private DatabaseHelper databaseHelper;
     private GridViewAdapter adapter;
+    public String getUserName() {
+        return sharedPref.getString("User", "User");
+    }
+    SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offer);
+        sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
 
         // Set up Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -45,7 +52,7 @@ public class OfferActivity extends AppCompatActivity {
     private class LoadOffersTask extends AsyncTask<Void, Void, ArrayList<OfferModel>> {
         @Override
         protected ArrayList<OfferModel> doInBackground(Void... params) {
-            return databaseHelper.getOfferItems();
+            return databaseHelper.getOfferItems(getUserName());
         }
 
         @Override

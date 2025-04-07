@@ -19,6 +19,9 @@
         android:theme="@style/Theme.HalalZone"
         tools:targetApi="31">
         <activity
+            android:name=".BarcodeScannerActivity"
+            android:exported="false" />
+        <activity
             android:name=".BusinessSignUpActivity"
             android:exported="false" />
         <activity

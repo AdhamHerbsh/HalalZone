@@ -54,7 +54,12 @@
                 android:hint="Enter Phone Number"
                 android:inputType="phone" />
         </LinearLayout>
-
+        <EditText
+            android:id="@+id/edit_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Address"
+            android:inputType="textPersonName" />
 
         <View
             android:layout_width="match_parent"

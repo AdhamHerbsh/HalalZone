@@ -32,8 +32,10 @@ public class AddBusinessActivity extends AppCompatActivity {
                 String Phone = binding.editTextPhone.getText().toString().trim();
                 int selectedRadioButtonId = binding.radioGroupBusinessType.getCheckedRadioButtonId();
                 String businessType = selectedRadioButtonId == R.id.radioShop ? "Shop" : "Restaurant";
+                int selectedRadioButtonId2 = binding.radioGroupBusinessCountry.getCheckedRadioButtonId();
+                String businessCountry = selectedRadioButtonId2 == R.id.radioUSA ? "USA" : "France";
 
-                Boolean insertuser = databaseHelper.addbusiness(username,name,password,Phone,businessType);
+                Boolean insertuser = databaseHelper.addbusiness(username,name,password,Phone,businessType,businessCountry);
                 if(insertuser){
                     Toast.makeText(AddBusinessActivity.this, "success" , Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddBusinessActivity.this, AdminHomeActivity.class);

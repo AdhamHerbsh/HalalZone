@@ -23,7 +23,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class EditProfileActivity extends AppCompatActivity {
 
-    private EditText editTextName, editTextPhone;
+    private EditText editTextName, editTextPhone, editTextAddress;
     private Button btnSave;
     private DatabaseHelper dbHelper;
     private Spinner countryCodeSpinner;
@@ -43,6 +43,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         editTextName = findViewById(R.id.edit_name);
         editTextPhone = findViewById(R.id.edit_phone);
+        editTextAddress = findViewById(R.id.edit_address);
         btnSave = findViewById(R.id.btn_save);
         countryCodeSpinner = findViewById(R.id.country_code_spinner);
         ArrayAdapter<String> countryCodeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,
@@ -80,10 +81,11 @@ public class EditProfileActivity extends AppCompatActivity {
     }
     private void loadUserData() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT name, phone FROM user WHERE email = ?", new String[]{String.valueOf(getUserName())});
+        Cursor cursor = db.rawQuery("SELECT name, phone, address  FROM user WHERE email = ?", new String[]{String.valueOf(getUserName())});
         if (cursor.moveToFirst()) {
             editTextName.setText(cursor.getString(0));
             editTextPhone.setText(cursor.getString(1));
+            editTextAddress.setText(cursor.getString(2));
         }
         cursor.close();
     }
@@ -91,8 +93,9 @@ public class EditProfileActivity extends AppCompatActivity {
     private void updateUserData() {
         String name = editTextName.getText().toString().trim();
         String phone = countryCodeSpinner.getSelectedItem().toString() + editTextPhone.getText().toString().trim();
+        String address = editTextAddress.getText().toString().trim();
 
-        if (name.isEmpty() || phone.isEmpty()) {
+        if (name.isEmpty() || phone.isEmpty() || address.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -106,6 +109,7 @@ public class EditProfileActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put("name", name);
         values.put("phone", phone);
+        values.put("address", phone);
 
         int rows = db.update("user", values, "email = ?", new String[]{String.valueOf(getUserName())});
         if (rows > 0) {

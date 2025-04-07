@@ -20,7 +20,7 @@ import java.util.Locale;
 
 public class DatabaseHelper  extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "MyDatabase.db";
-    private static final int DATABASE_VERSION = 12;
+    private static final int DATABASE_VERSION = 16;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,10 +32,10 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS USER " +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL, phone TEXT)");
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL, phone TEXT, gender TEXT, address TEXT, country TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS BUSINESSES " +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL, phone TEXT NOT NULL, status TEXT NOT NULL,  image BLOB, type TEXT)");
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, password TEXT NOT NULL, name TEXT NOT NULL, phone TEXT NOT NULL, status TEXT NOT NULL,  image BLOB, type TEXT, country TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS CATEGORY " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE NOT NULL)");
@@ -62,7 +62,8 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE IF NOT EXISTS VIDEOS " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, VIDEO_ID TEXT NOT NULL,NUM INTEGER)");
-        db.execSQL("CREATE TABLE PROBLEM (" +
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS PROBLEM (" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT, " + // Using _id as the primary key
                 "order_id TEXT, " +
                 "order_item_id TEXT, " +
@@ -70,6 +71,10 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
                 "date TEXT, " +
                 "status TEXT, " +
                 "note TEXT);");
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS HALAL_ITEMS (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " + // Using _id as the primary key
+                "barcode TEXT UNIQUE);");
     }
 
     public String getMaxNumVideoId() {
@@ -141,7 +146,8 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
 //        db.execSQL("DROP TABLE IF EXISTS PROBLEM");
 //        db.execSQL("DROP TABLE IF EXISTS BUSINESSES_REVIEWS");
 //        db.execSQL("DROP TABLE IF EXISTS BUSINESSES_WARNING");
-//        onCreate(db);
+//        db.execSQL("DROP TABLE IF EXISTS HALAL_ITEMS");
+        onCreate(db);
         // OxB2h_1ZS74
 //        try {
 //            db.execSQL("ALTER TABLE ITEM ADD COLUMN business_email TEXT NOT NULL DEFAULT ''");
@@ -162,9 +168,12 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
 //            }
 //        }
 
-//        if (oldVersion < 12) { // Increment database version when adding the column
+//        if (oldVersion < 13) { // Increment database version when adding the column
 //            try {
-//                db.execSQL("ALTER TABLE ORDER_TABLE ADD COLUMN paymentMethod TEXT");
+//                db.execSQL("ALTER TABLE BUSINESSES ADD COLUMN country TEXT");
+//                db.execSQL("ALTER TABLE USER ADD COLUMN country TEXT");
+//                db.execSQL("ALTER TABLE USER ADD COLUMN address TEXT");
+//                db.execSQL("ALTER TABLE USER ADD COLUMN gender TEXT");
 //            } catch (SQLException e) {
 //                e.printStackTrace();
 //            }
@@ -185,6 +194,15 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
 //                e.printStackTrace();
 //            }
 //        }
+    }
+
+    public boolean insertBarcode(String barcode) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("barcode", barcode);
+
+        long result = db.insert("HALAL_ITEMS", null, values);
+        return result != -1; // Return true if inserted successfully
     }
 
     public Boolean checkadmin (String email, String Password){
@@ -209,13 +227,16 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
     }
 
 
-    public Boolean adduser(String email,String Name,String Password,String Phone){
+    public Boolean adduser(String email,String Name,String Password,String Phone,String Address,String Country,String Gender){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("email",email);
         contentValues.put("name",Name);
         contentValues.put("password",Password);
         contentValues.put("phone",Phone);
+        contentValues.put("address",Address);
+        contentValues.put("gender",Gender);
+        contentValues.put("country",Country);
         long result = MyDB.insert("USER",null,contentValues);
         if (result == -1 ) {
             return false;
@@ -224,7 +245,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean addbusiness(String email,String Name,String Password,String Phone, String type){
+    public Boolean addbusiness(String email,String Name,String Password,String Phone, String type, String country){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("email",email);
@@ -232,6 +253,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         contentValues.put("password",Password);
         contentValues.put("phone",Phone);
         contentValues.put("type",type);
+        contentValues.put("country",country);
         contentValues.put("status","Done");
         long result = MyDB.insert("BUSINESSES",null,contentValues);
         if (result == -1 ) {
@@ -434,10 +456,20 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<OfferModel> getOfferItems() {
+    public ArrayList<OfferModel> getOfferItems(String username) {
         ArrayList<OfferModel> list = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT id, name, business_email, price, dis_price, image FROM ITEM WHERE dis_price != 0", null);
+//        Cursor cursor = db.rawQuery("SELECT id, name, business_email, price, dis_price, image FROM ITEM WHERE dis_price != 0 AND ", null);
+        Cursor cursor = db.rawQuery(
+                "SELECT ITEM.id, ITEM.name, ITEM.business_email, ITEM.price, ITEM.dis_price, ITEM.image, BUSINESSES.country " +
+                        "FROM ITEM " +
+                        "JOIN BUSINESSES ON ITEM.business_email = BUSINESSES.business_email " +
+                        "WHERE ITEM.dis_price != 0 " +
+                        "AND BUSINESSES.country = (SELECT u.country FROM USER u WHERE UPPER(u.email) = ?)",
+                new String[]{username.toUpperCase()}
+        );
+
+
 
         if (cursor != null) {
             try {
@@ -691,10 +723,10 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList<Business> getBusinesses(String type1) {
+    public ArrayList<Business> getBusinesses(String type1,String username) {
         ArrayList<Business> restaurantsList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM BUSINESSES WHERE status != ? AND type = ?", new String[]{"blocked", type1});
+        Cursor cursor = db.rawQuery("SELECT * FROM BUSINESSES WHERE status != ? AND type = ? AND country = (SELECT u.country FROM USER u WHERE UPPER(u.email) = ?)", new String[]{"blocked", type1, username});
 
         if (cursor.moveToFirst()) {
             do {

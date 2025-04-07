@@ -71,12 +71,19 @@
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Business Type"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:layout_margin="5dp" />
+
     <RadioGroup
         android:id="@+id/radioGroupBusinessType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioShop"
@@ -91,6 +98,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Restaurant"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:layout_margin="5dp" />
+    <RadioGroup
+        android:id="@+id/radioGroupBusinessCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioUSA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USA"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:id="@+id/radioFrance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="France"/>
     </RadioGroup>
     <Button
         android:id="@+id/btnSubmit"

@@ -42,8 +42,17 @@ public class BusinessSignUpActivity extends AppCompatActivity {
                 String Phone = binding.editTextPhone.getText().toString().trim();
                 int selectedRadioButtonId = binding.radioGroupBusinessType.getCheckedRadioButtonId();
                 String businessType = selectedRadioButtonId == R.id.radioShop ? "Shop" : "Restaurant";
+                int selectedRadioButtonId2 = binding.radioGroupBusinessCountry.getCheckedRadioButtonId();
+                String businessCountry = selectedRadioButtonId2 == R.id.radioUSA ? "USA" : "France";
 
-                Boolean insertuser = databaseHelper.addbusiness(username,name,password,Phone,businessType);
+                System.out.println(username);
+                System.out.println(name);
+                System.out.println(password);
+                System.out.println(Phone);
+                System.out.println(businessType);
+                System.out.println(businessCountry);
+
+                Boolean insertuser = databaseHelper.addbusiness(username,name,password,Phone,businessType,businessCountry);
                 if(insertuser){
                     saveBusiness(username);
                     Toast.makeText(BusinessSignUpActivity.this, "success" , Toast.LENGTH_SHORT).show();

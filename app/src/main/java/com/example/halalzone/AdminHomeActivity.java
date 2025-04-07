@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AdminHomeActivity extends AppCompatActivity {
 
-    LinearLayout report, add, mng, video, warning;
+    LinearLayout report, add, mng, video, warning,HalaItem;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,6 +44,14 @@ public class AdminHomeActivity extends AppCompatActivity {
         video = findViewById(R.id.video);
         video.setOnClickListener(this::tovedio);
 
+        HalaItem = findViewById(R.id.HalaItem);
+        HalaItem.setOnClickListener(this::toHalaItem);
+
+    }
+
+    public void toHalaItem(View view) {
+        Intent intent = new Intent(this, BarcodeScannerActivity.class);
+        startActivity(intent);
     }
     public void toreport(View view) {
         Intent intent = new Intent(this, ReportsActivity.class);

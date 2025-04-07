@@ -1,6 +1,8 @@
 package com.example.halalzone;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -22,12 +24,17 @@ public class RestuarantsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private BusinessAdapter businessAdapter;
     private DatabaseHelper dbHelper;
+    public String getUserName() {
+        return sharedPref.getString("User", "User");
+    }
+    SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_restuarants);
+        sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
 
         // Set up Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -43,7 +50,7 @@ public class RestuarantsActivity extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
 
         // Fetch businesses where status != "blocked" and type = "restaurants"
-        List<Business> businessList = dbHelper.getBusinesses("Restaurant");
+        List<Business> businessList = dbHelper.getBusinesses("Restaurant",  getUserName() );
         businessAdapter = new BusinessAdapter(this, businessList);
         recyclerView.setAdapter(businessAdapter);
 
