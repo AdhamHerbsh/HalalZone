@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+
 public class DatabaseHelper  extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "MyDatabase.db";
     private static final int DATABASE_VERSION = 16;
@@ -226,7 +227,6 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         }
     }
 
-
     public Boolean adduser(String email,String Name,String Password,String Phone,String Address,String Country,String Gender){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -281,7 +281,6 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         }
     }
 
-
     public Boolean checkuser (String email, String Password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from USER where email = ? and password = ?",new String[]{email,Password});
@@ -291,6 +290,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
             return false;
         }
     }
+
     public String getname (String email){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select name from USER where email = ?",new String[]{email});
@@ -303,9 +303,6 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
             return "";
         }
     }
-
-
-
 
 
     public Cursor getBusiness() {
